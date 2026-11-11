@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CADI Tecnología y Deporte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F5F8;--sf:#fff;--tx:#10263F;--mu:#4D6179;--ln:#D6DEE7;--br:#10263F;--onbr:#fff;--ac:#17784F;--acbg:#E3F4EC;--wn:#8A5200;--wnbg:#FFF3DC;--er:#B3261E;--bad:#9A3412;--badbg:#FDEBDD;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0C1622;--sf:#142234;--tx:#E8EEF5;--mu:#A3B5C8;--ln:#27394E;--br:#49C28F;--onbr:#06150E;--ac:#5ED1A0;--acbg:#12372B;--wn:#F2B866;--wnbg:#3A2A10;--er:#FF8A80;--bad:#F4A87C;--badbg:#3B2316;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0C1622;--sf:#142234;--tx:#E8EEF5;--mu:#A3B5C8;--ln:#27394E;--br:#49C28F;--onbr:#06150E;--ac:#5ED1A0;--acbg:#12372B;--wn:#F2B866;--wnbg:#3A2A10;--er:#FF8A80;--bad:#F4A87C;--badbg:#3B2316;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 Barlow,system-ui,sans-serif}
+h1,h2,h3{font-family:"Barlow Semi Condensed",Barlow,sans-serif;line-height:1.1;margin:0 0 .5rem;letter-spacing:.2px}
+h1{font-size:clamp(2.1rem,6.5vw,3.6rem)}h2{font-size:1.7rem}h3{font-size:1.2rem}
+p{margin:0 0 .8rem}.mu{color:var(--mu)}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px}
+header{background:var(--sf);border-bottom:1px solid var(--ln)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;flex-wrap:wrap}
+.brand{font:700 1.25rem "Barlow Semi Condensed",sans-serif;background:none;border:0;color:var(--tx);cursor:pointer;display:flex;align-items:center;gap:8px;padding:6px 0}
+.dot{width:14px;height:14px;border-radius:50%;background:var(--ac);display:inline-block}
+nav{display:flex;gap:4px;overflow-x:auto;padding-bottom:2px}
+.tab{background:none;border:0;border-bottom:3px solid transparent;color:var(--mu);font:600 1rem Barlow,sans-serif;padding:12px 14px;min-height:44px;cursor:pointer;white-space:nowrap}
+.tab[aria-current=page]{color:var(--tx);border-bottom-color:var(--ac)}
+button,select,input,textarea{font:inherit}
+.btn{background:var(--br);color:var(--onbr);border:2px solid var(--br);border-radius:8px;padding:10px 18px;min-height:44px;font-weight:600;cursor:pointer}
+.btn.sec{background:transparent;color:var(--tx);border-color:var(--ln)}
+.btn.sm{padding:6px 12px;min-height:38px}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+main{padding:24px 0 40px;outline:none}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:12px;padding:18px;margin-bottom:16px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.hero{display:grid;gap:28px;grid-template-columns:1.2fr 1fr;align-items:center;padding:28px 0}
+.ficha{background:var(--br);color:var(--onbr);border-radius:20px;padding:22px}
+.ficha .big{font:700 3rem "Barlow Semi Condensed",sans-serif;line-height:1}
+.roles{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.notice{border-left:4px solid var(--wn);background:var(--wnbg);color:var(--tx);padding:10px 14px;border-radius:0 8px 8px 0;margin-bottom:16px}
+.f{margin-bottom:14px}label{display:block;font-weight:600;margin-bottom:4px}
+input[type=text],input[type=date],select,textarea{width:100%;padding:10px 12px;min-height:44px;border:1.5px solid var(--ln);border-radius:8px;background:var(--bg);color:var(--tx)}
+.chk{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px}.chk input{width:22px;height:22px;margin-top:2px;accent-color:var(--ac)}.chk label{margin:0;font-weight:400}
+.err{display:block;color:var(--er);min-height:1.2em;font-size:.9rem}
+input[aria-invalid=true],select[aria-invalid=true]{border-color:var(--er)}
+.row2{display:grid;gap:0 14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.badge{display:inline-block;padding:2px 10px;border-radius:99px;font-size:.85rem;font-weight:600;background:var(--acbg);color:var(--ac)}
+.badge.w{background:var(--wnbg);color:var(--wn)}
+.met{border:1px solid var(--ln);border-radius:10px;padding:14px;background:var(--sf)}
+.met .v{font:700 2.2rem "Barlow Semi Condensed",sans-serif;line-height:1}
+.d{font-size:.92rem;font-weight:600;color:var(--ac)}.d.bad{color:var(--bad)}.d.n{color:var(--mu)}
+.hd{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}
+.list{display:flex;flex-direction:column;gap:10px}
+.item{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.acts{display:flex;gap:8px;flex-wrap:wrap}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:560px}th,td{padding:8px 10px;border-bottom:1px solid var(--ln);text-align:left;white-space:nowrap}
+svg text{fill:var(--mu);font:12px Barlow,sans-serif}
+#toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--br);color:var(--onbr);padding:12px 18px;border-radius:10px;max-width:90%;display:none;z-index:9}
+footer{border-top:1px solid var(--ln);padding:16px 0;color:var(--mu);font-size:.9rem}
+@media (max-width:720px){.hero{grid-template-columns:1fr}}
+@media print{header,footer,.noprint,#toast{display:none!important}body{background:#fff;color:#000}.card,.met{border-color:#999}}
+@media (prefers-reduced-motion:no-preference){.ficha{animation:in .5s ease-out}@keyframes in{from{opacity:0;transform:translateY(8px)}}}
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+<button class="brand" data-act="home" aria-label="Ir al inicio"><span class="dot"></span>CADI Tecnología y Deporte</button>
+<nav id="nav" aria-label="Secciones"></nav>
+</div></header>
+<main class="wrap" id="main" tabindex="-1"></main>
+<footer><div class="wrap">Prototipo de demostración: los datos se guardan solo en este navegador y no hay inicio de sesión real.<span id="zs"></span> <button class="btn sec sm" data-act="reset">Restablecer datos de ejemplo</button></div></footer>
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+const KEY='cadi_v2',TODAY=new Date().toISOString().slice(0,10);
+/* ===== Zapier: pega aqui la URL del Catch Hook y define el secreto y el correo del evaluador ===== */
+const ZAPIER={url:'https://hooks.zapier.com/hooks/catch/29265977/45ba4je/',secret:'cambia-este-secreto',evaluador:'alexandersotelo25dibujo@gmail.com'};
+const APP_URL=location.href.split('#')[0];
+function emit(event,a,to,subject,body,extra){
+if(!ZAPIER.url)return false;
+const p=new URLSearchParams({event,ts:new Date().toISOString(),secret:ZAPIER.secret,to:to||ZAPIER.evaluador,cc:(to&&to!==ZAPIER.evaluador)?ZAPIER.evaluador:'',subject,body,athlete_id:a.id,athlete_name:a.name,...extra});
+fetch(ZAPIER.url,{method:'POST',mode:'no-cors',body:p}).catch(()=>{});return true}
+const MET=[['jump','Salto vertical',1],['sprint','Velocidad 30 m',0],['endur','Resistencia 6 min',1],['flex','Flexibilidad',1]];
+function stag(e,p){if(!p)return[];return MET.map(([k,l,up])=>{const pc=(e[k]-p[k])/Math.abs(p[k])*100*(up?1:-1);return pc<1?`${l} (${String(Math.round(pc*10)/10).replace('.',',')} %)`:null}).filter(Boolean)}
+const M=[{k:'jump',l:'Salto vertical',u:'cm',up:1,a:10,b:90},{k:'sprint',l:'Velocidad 30 m',u:'s',up:0,a:3,b:10},{k:'endur',l:'Resistencia 6 min',u:'m',up:1,a:400,b:1800},{k:'flex',l:'Flexibilidad',u:'cm',up:1,a:-20,b:40}];
+const seed=()=>({athletes:[{id:'a1',name:'Samuel Rojas',age:13,sport:'Fútbol',g:'g1'},{id:'a2',name:'Valeria Rojas',age:10,sport:'Natación',g:'g1'},{id:'a3',name:'Tomás Herrera',age:15,sport:'Baloncesto',g:'g2'}],
+consents:[{id:'c1',athleteId:'a1',name:'Marta Rojas',email:'marta.rojas@example.com',doc:'52123456',date:'2026-03-05',active:true},{id:'c2',athleteId:'a3',name:'Luis Herrera',email:'luis.herrera@example.com',doc:'79456123',date:'2026-04-02',active:true}],
+evals:[{id:'e1',athleteId:'a1',date:'2026-03-10',h:151,w:42,jump:31,sprint:5.4,endur:1050,flex:8,notes:'Buena técnica de carrera. Trabajar movilidad de cadera.',by:'Carlos Méndez',pub:true},
+{id:'e2',athleteId:'a1',date:'2026-09-15',h:155,w:44.5,jump:35,sprint:5.2,endur:1130,flex:10,notes:'Mejoró la potencia de piernas y mantiene buen ritmo en pruebas largas.',by:'Carlos Méndez',pub:false},
+{id:'e3',athleteId:'a3',date:'2026-04-20',h:172,w:61,jump:44,sprint:4.8,endur:1290,flex:5,notes:'Alta explosividad. Mejorar flexibilidad.',by:'Carlos Méndez',pub:true},
+{id:'e4',athleteId:'a3',date:'2026-09-18',h:175,w:63,jump:47,sprint:4.7,endur:1340,flex:4,notes:'Sigue ganando potencia; la flexibilidad no avanza.',by:'Carlos Méndez',pub:false}]});
+let db;try{db=JSON.parse(localStorage.getItem(KEY))}catch(e){}if(!db||!db.athletes)db=seed();
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){}};
+const S={role:null,tab:null,sel:{},open:null};
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=n=>String(n).replace('.',','),fd=d=>new Date(d+'T00:00').toLocaleDateString('es-CO',{day:'numeric',month:'short',year:'numeric'});
+const ath=id=>db.athletes.find(a=>a.id===id),cons=id=>db.consents.find(c=>c.athleteId===id&&c.active);
+const evs=id=>db.evals.filter(e=>e.athleteId===id).sort((a,b)=>a.date.localeCompare(b.date));
+const mine=()=>db.athletes.filter(a=>a.g==='g1');
+const TABS={ac:[['cons','Consentimiento'],['rep','Reportes']],ev:[['reg','Registrar evaluación'],['rpts','Reportes'],['hist','Historial']]};
+function toast(t){const e=$('#toast');e.textContent=t;e.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display='none',3500)}
+function pick(name,list,def){let v=S.sel[name];if(!list.some(x=>x.id===v))v=S.sel[name]=def||(list[0]&&list[0].id);return v}
+const sel=(name,label,opts,v)=>`<div class="f"><label for="s-${name}">${label}</label><select id="s-${name}" data-sel="${name}">${opts.map(o=>`<option value="${esc(o.id)}"${o.id===v?' selected':''}>${esc(o.t)}</option>`).join('')}</select></div>`;
+const fld=(n,l,x='')=>`<div class="f"><label for="${n}">${l}</label><input type="text" id="${n}" name="${n}" ${x} aria-describedby="e-${n}"><small class="err" id="e-${n}" data-err="${n}"></small></div>`;
+
+function summary(e,p){if(!p)return'Primera evaluación registrada. Estos valores son el punto de partida para medir el progreso.';
+const up=M.filter(m=>(e[m.k]-p[m.k])*(m.up?1:-1)>0).map(m=>m.l.toLowerCase()),dn=M.filter(m=>(e[m.k]-p[m.k])*(m.up?1:-1)<0).map(m=>m.l.toLowerCase());
+return(up.length?`Mejoró en ${up.join(', ')}. `:'')+(dn.length?`Por trabajar: ${dn.join(', ')}. `:'')+(!up.length&&!dn.length?'Los resultados se mantuvieron estables.':'')}
+function report(e){const a=ath(e.athleteId),p=evs(a.id).filter(x=>x.date<e.date).pop();
+return`<article class="card" aria-label="Reporte de evaluación"><div class="hd"><div><h2>${esc(a.name)}</h2><p class="mu">${esc(a.sport)} · ${a.age} años · Evaluación del ${fd(e.date)}</p></div><button class="btn sec sm noprint" data-act="print">Imprimir o guardar PDF</button></div>
+<div class="grid">${M.map(m=>{const df=p?Math.round((e[m.k]-p[m.k])*100)/100:null,good=df!==null&&df*(m.up?1:-1)>0,bad=df!==null&&df*(m.up?1:-1)<0;
+return`<div class="met"><div class="mu">${m.l}</div><div class="v">${fmt(e[m.k])} <small>${m.u}</small></div><div class="d ${bad?'bad':df===0||df===null?'n':''}">${df===null?'Sin evaluación previa':df===0?'Sin cambios':(good?'Mejora ':'Baja ')+(df>0?'+':'')+fmt(df)+' '+m.u}</div></div>`}).join('')}</div>
+<p style="margin-top:14px"><strong>Medidas corporales:</strong> estatura ${e.h} cm · peso ${fmt(e.w)} kg</p>
+<p><strong>Resumen:</strong> ${summary(e,p)}</p>${e.notes?`<p><strong>Observaciones del evaluador:</strong> ${esc(e.notes)}</p>`:''}
+<p class="mu">Evaluó: ${esc(e.by)}. Este reporte describe el rendimiento físico y no es un diagnóstico médico.</p></article>`}
+
+function chart(list,m){if(list.length<2)return'<p class="mu">Se necesitan al menos dos evaluaciones para ver la evolución.</p>';
+const W=560,H=190,P=36,v=list.map(e=>e[m.k]),lo=Math.min(...v),hi=Math.max(...v),r=hi-lo||1;
+const pt=list.map((e,i)=>[P+i*(W-2*P)/(list.length-1),H-P-((e[m.k]-lo)/r)*(H-2*P)]);
+return`<div class="tw"><svg viewBox="0 0 ${W} ${H}" width="100%" style="min-width:420px" role="img" aria-label="Evolución de ${m.l.toLowerCase()}"><polyline points="${pt.map(p=>p.join(',')).join(' ')}" fill="none" stroke="var(--ac)" stroke-width="3"/>${pt.map((p,i)=>`<circle cx="${p[0]}" cy="${p[1]}" r="5" fill="var(--ac)"/><text x="${p[0]}" y="${p[1]-11}" text-anchor="middle">${fmt(v[i])}</text><text x="${p[0]}" y="${H-8}" text-anchor="middle">${fd(list[i].date)}</text>`).join('')}</svg></div>`}
+
+function addForm(){return S.sel.add?`<form class="card" id="fa" novalidate><h3>Agregar deportista</h3>${fld('aname','Nombre completo del deportista','autocomplete="off"')}<div class="row2">${fld('aage','Edad (años)','inputmode="numeric" autocomplete="off"')}${fld('asport','Deporte','autocomplete="off"')}</div><div class="acts"><button class="btn" type="submit">Guardar deportista</button><button class="btn sec" type="button" data-act="canceladd">Cancelar</button></div></form>`:''}
+const V={
+home:()=>`<section class="hero"><div><h1>Las evaluaciones de tu deportista, claras y con tu autorización.</h1><p class="mu" style="font-size:1.1rem;max-width:34em">El acudiente autoriza y consulta reportes. El evaluador registra pruebas físicas y sigue la evolución de cada deportista en un solo lugar.</p>
+<div class="roles"><button class="btn" data-act="role" data-v="ac">Soy acudiente o padre</button><button class="btn sec" data-act="role" data-v="ev">Soy evaluador o entrenador</button></div><p class="mu">Elige tu rol para entrar al prototipo con datos de ejemplo.</p></div>
+<div class="ficha" aria-label="Ejemplo de ficha"><p style="opacity:.8">Ejemplo de reporte</p><h3>Samuel Rojas</h3><div class="big">35 cm</div><p>Salto vertical, +4 cm desde marzo</p>
+<svg viewBox="0 0 200 50" width="100%" aria-hidden="true"><polyline points="10,40 100,28 190,10" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="10" cy="40" r="4" fill="currentColor"/><circle cx="100" cy="28" r="4" fill="currentColor"/><circle cx="190" cy="10" r="4" fill="currentColor"/></svg></div></section>`,
+cons:()=>{const l=mine();return`<h2>Consentimiento</h2><p class="mu">Sin tu autorización no se pueden registrar datos de evaluación de tus hijos o acudidos.</p><div class="acts" style="margin-bottom:14px"><button class="btn sm" data-act="addath">Agregar deportista</button></div><div class="list">${l.map(a=>{const c=cons(a.id);return`<div class="card item"><div><h3>${esc(a.name)}</h3><span class="mu">${esc(a.sport)} · ${a.age} años</span>${a.own&&!evs(a.id).length?` <button class="btn sec sm" data-act="rmath" data-v="${a.id}" aria-label="Quitar a ${esc(a.name)}">Quitar</button>`:''}</div>${c?`<div class="acts"><span class="badge">Autorizado el ${fd(c.date)}</span><button class="btn sec sm" data-act="revoke" data-v="${a.id}">Revocar</button></div>`:`<div class="acts"><span class="badge w">Falta tu autorización</span><button class="btn sm" data-act="consent" data-v="${a.id}">Dar consentimiento</button></div>`}</div>`}).join('')}</div>
+${addForm()}
+${S.sel.cons&&ath(S.sel.cons)&&!cons(S.sel.cons)?`<form class="card" id="fc" novalidate><h3>Autorización para ${esc(ath(S.sel.cons).name)}</h3><input type="hidden" name="aid" value="${S.sel.cons}">${fld('name','Nombre completo del acudiente','autocomplete="name"')}${fld('doc','Documento de identidad (solo números)','inputmode="numeric" autocomplete="off"')}${fld('email','Correo del acudiente (para el comprobante y los avisos)','inputmode="email" autocomplete="email"')}
+<div class="chk"><input type="checkbox" id="c1" name="c1" aria-describedby="e-c1"><label for="c1">Autorizo que se evalúe la condición física del deportista y se registren sus datos.</label></div>
+<div class="chk"><input type="checkbox" id="c2" name="c2" aria-describedby="e-c2"><label for="c2">Entiendo que puedo revocar esta autorización cuando quiera.</label></div><small class="err" id="e-c1" data-err="c1"></small><small class="err" data-err="c2" id="e-c2"></small>
+<div class="acts"><button class="btn" type="submit">Firmar consentimiento</button><button class="btn sec" type="button" data-act="cancel">Cancelar</button></div></form>`:''}`},
+rep:()=>{const l=mine().filter(a=>cons(a.id)),id=pick('rep',mine(),l[0]&&l[0].id),a=ath(id);let h=`<h2>Reportes de evaluación</h2>`+sel('rep','Deportista',mine().map(x=>({id:x.id,t:x.name})),id);
+if(!cons(id))return h+`<div class="notice">Para ver reportes de ${esc(a.name)} primero debes dar tu consentimiento.</div><button class="btn" data-act="tab" data-v="cons">Ir a Consentimiento</button>`;
+const p=evs(id).filter(e=>e.pub).reverse();if(!p.length)return h+`<div class="card"><h3>Aún no hay reportes publicados</h3><p class="mu">Cuando el evaluador publique una evaluación, aparecerá aquí.</p></div>`;
+const eid=pick('repEv',p.map(e=>({id:e.id})),p[0].id);
+return h+(p.length>1?sel('repEv','Evaluación',p.map(e=>({id:e.id,t:fd(e.date)})),eid):'')+report(p.find(e=>e.id===eid))},
+reg:()=>{const id=pick('reg',db.athletes),ok=!!cons(id);return`<h2>Registrar evaluación</h2><div class="acts" style="margin-bottom:14px"><button class="btn sm" data-act="addath">Agregar deportista</button></div>${addForm()}`+sel('reg','Deportista',db.athletes.map(a=>({id:a.id,t:a.name+(cons(a.id)?'':' (sin consentimiento)')})),id)+
+(ok?'':`<div class="notice">Este deportista no tiene consentimiento vigente. Pide al acudiente que lo firme antes de registrar datos.</div>`)+
+`<form class="card" id="fe" novalidate><fieldset style="border:0;padding:0;margin:0"${ok?'':' disabled'}><input type="hidden" name="aid" value="${id}">${fld('date','Fecha','type="text" value="'+TODAY+'" placeholder="AAAA-MM-DD"')}
+<div class="row2">${fld('h','Estatura (cm)','inputmode="decimal"')}${fld('w','Peso (kg)','inputmode="decimal"')}${M.map(m=>fld(m.k,`${m.l} (${m.u})`,'inputmode="decimal"')).join('')}</div>
+<div class="f"><label for="notes">Observaciones (opcional)</label><textarea id="notes" name="notes" rows="3" maxlength="400"></textarea></div><button class="btn" type="submit">Guardar evaluación</button></fieldset></form>`},
+rpts:()=>{const l=[...db.evals].sort((a,b)=>b.date.localeCompare(a.date));return`<h2>Reportes</h2><p class="mu">Publica un reporte para que el acudiente pueda consultarlo.</p><div class="list">${l.map(e=>`<div class="card item"><div><h3>${esc(ath(e.athleteId).name)}</h3><span class="mu">${fd(e.date)}</span></div><div class="acts"><span class="badge ${e.pub?'':'w'}">${e.pub?'Publicado':'Sin publicar'}</span><button class="btn sec sm" data-act="open" data-v="${e.id}">${S.open===e.id?'Ocultar':'Ver reporte'}</button>${e.pub?'':`<button class="btn sm" data-act="publish" data-v="${e.id}">Publicar</button>`}</div></div>${S.open===e.id?report(e):''}`).join('')||'<div class="card">Aún no hay evaluaciones registradas.</div>'}</div>`},
+hist:()=>{const id=pick('hist',db.athletes),m=M.find(x=>x.k===S.sel.met)||M[0],l=evs(id);
+return`<h2>Historial del deportista</h2><div class="row2">${sel('hist','Deportista',db.athletes.map(a=>({id:a.id,t:a.name})),id)}${sel('met','Medida',M.map(x=>({id:x.k,t:x.l})),m.k)}</div>${l.length>1&&stag(l[l.length-1],l[l.length-2]).length?`<div class="notice"><strong>Posible estancamiento</strong> en la última evaluación: ${stag(l[l.length-1],l[l.length-2]).join(', ')}. Considera ajustar las cargas de entrenamiento.</div>`:''}<div class="card">${chart(l,m)}</div>
+${l.length?`<div class="card tw"><table><caption class="mu" style="text-align:left">Todas las evaluaciones</caption><thead><tr><th>Fecha</th><th>Estatura</th><th>Peso</th>${M.map(x=>`<th>${x.l}</th>`).join('')}<th>Estado</th></tr></thead><tbody>${l.map(e=>`<tr><td>${fd(e.date)}</td><td>${e.h} cm</td><td>${fmt(e.w)} kg</td>${M.map(x=>`<td>${fmt(e[x.k])} ${x.u}</td>`).join('')}<td>${e.pub?'Publicado':'Sin publicar'}</td></tr>`).join('')}</tbody></table></div>`:'<div class="card">Este deportista aún no tiene evaluaciones.</div>'}`}};
+
+function render(){const t=S.role&&TABS[S.role];$('#nav').innerHTML=t?t.map(x=>`<button class="tab" data-act="tab" data-v="${x[0]}"${S.tab===x[0]?' aria-current="page"':''}>${x[1]}</button>`).join('')+`<button class="tab" data-act="home">Cambiar rol</button>`:'';
+$('#main').innerHTML=(S.role?`<p class="mu">Sesión de demostración como <strong>${S.role==='ac'?'Marta Rojas (acudiente)':'Carlos Méndez (evaluador)'}</strong></p>`:'')+V[S.role?S.tab:'home']()}
+function go(role,tab){S.role=role;S.tab=tab;S.open=null;render();$('#main').focus();scrollTo(0,0)}
+
+document.addEventListener('click',e=>{const t=e.target.closest('[data-act]');if(!t)return;const a=t.dataset.act,v=t.dataset.v;
+if(a==='home')go(null,null);else if(a==='role')go(v,TABS[v][0][0]);else if(a==='tab'){S.sel.cons=null;S.sel.add=false;go(S.role,v)}
+else if(a==='print')print();else if(a==='open'){S.open=S.open===v?null:v;render()}
+else if(a==='consent'){S.sel.cons=v;render();$('#name').focus()}else if(a==='cancel'){S.sel.cons=null;render()}
+else if(a==='addath'){S.sel.add=true;S.sel.cons=null;render();$('#aname').focus()}
+else if(a==='canceladd'){S.sel.add=false;render()}
+else if(a==='rmath'){const at=ath(v);if(at&&confirm('¿Quitar a '+at.name+' de la lista? Se borrará también su consentimiento.')){db.athletes=db.athletes.filter(x=>x.id!==v);db.consents=db.consents.filter(x=>x.athleteId!==v);save();render();toast('Deportista quitado.')}}
+else if(a==='revoke'){if(confirm('¿Revocar el consentimiento? No se podrán registrar nuevas evaluaciones y los reportes dejarán de mostrarse.')){const c=cons(v),at=ath(v);c.active=false;save();const sent=emit('consentimiento_revocado',at,c.email||ZAPIER.evaluador,'Consentimiento revocado: '+at.name,`Se revocó el consentimiento para la evaluación de ${at.name} el ${fd(TODAY)}.\nNo se registrarán nuevas evaluaciones hasta que se firme de nuevo.\n\nCADI Tecnología y Deporte`,{alerta:'NO',estado:'Revocado'});render();toast('Consentimiento revocado.'+(sent?' Aviso enviado.':''))}}
+else if(a==='publish'){const ev=db.evals.find(x=>x.id===v),at=ath(ev.athleteId),c=cons(at.id),pv=evs(at.id).filter(x=>x.date<ev.date).pop();ev.pub=true;save();
+const sent=emit('reporte_publicado',at,(c&&c.email)||ZAPIER.evaluador,'Nuevo reporte de evaluación: '+at.name,`Ya está disponible el reporte de evaluación de ${at.name} del ${fd(ev.date)}.\n${summary(ev,pv)}\nEntra a la plataforma para ver el detalle:\n${APP_URL}\n\nCADI Tecnología y Deporte`,{alerta:'NO',estado:'Publicado'});
+render();toast('Reporte publicado. Ya lo puede consultar el acudiente.'+(sent?' Aviso enviado por correo.':''))}
+else if(a==='reset'){if(confirm('Se borrarán los cambios y volverán los datos de ejemplo. ¿Continuar?')){db=seed();save();S.sel={};go(null,null);toast('Datos de ejemplo restablecidos.')}}});
+document.addEventListener('change',e=>{const n=e.target.dataset.sel;if(!n)return;S.sel[n]=e.target.value;if(n==='rep')S.sel.repEv=null;if(n==='reg'&&!cons(e.target.value)){const at=ath(e.target.value);emit('evaluacion_bloqueada',at,ZAPIER.evaluador,'Evaluación bloqueada: '+at.name,`Se intentó registrar una evaluación de ${at.name} sin consentimiento vigente. Se bloqueó la captura de datos.\nPide al acudiente que firme el consentimiento.`,{alerta:'NO',estado:'Bloqueado'})}render();const s=$('#s-'+n);s&&s.focus()});
+function showErr(f,er){f.querySelectorAll('[data-err]').forEach(s=>s.textContent=er[s.dataset.err]||'');f.querySelectorAll('input,select').forEach(i=>i.removeAttribute('aria-invalid'));
+const k=Object.keys(er);k.forEach(n=>{const i=f.elements[n];i&&i.setAttribute&&i.setAttribute('aria-invalid','true')});if(k.length){const i=f.elements[k[0]];i&&i.focus&&i.focus()}return k.length}
+document.addEventListener('submit',e=>{e.preventDefault();const f=e.target,d=Object.fromEntries(new FormData(f)),er={};
+if(f.id==='fc'){if((d.name||'').trim().length<3)er.name='Escribe el nombre completo (mínimo 3 letras).';if(!/^\d{6,12}$/.test(d.doc||''))er.doc='El documento debe tener entre 6 y 12 números, sin puntos ni espacios.';
+if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((d.email||'').trim()))er.email='Escribe un correo válido, por ejemplo nombre@correo.com.';if(!d.c1)er.c1='Marca la autorización para continuar.';if(!d.c2)er.c2='Marca que entiendes que puedes revocarla.';
+if(showErr(f,er))return;db.consents.push({id:'c'+Date.now(),athleteId:d.aid,name:d.name.trim(),email:d.email.trim(),doc:d.doc,date:TODAY,active:true});save();S.sel.cons=null;
+const at=ath(d.aid),sent=emit('consentimiento_firmado',at,d.email.trim(),'Consentimiento registrado: '+at.name,`Hola ${d.name.trim()},\n\nSe registró tu consentimiento para la evaluación de ${at.name} el ${fd(TODAY)}. Estado: Habilitado.\nPuedes revocarlo cuando quieras desde la plataforma:\n${APP_URL}\n\nCADI Tecnología y Deporte`,{alerta:'NO',estado:'Habilitado'});
+render();toast('Consentimiento firmado. Ya se pueden registrar evaluaciones.'+(sent?' Comprobante enviado por correo.':''))}
+else if(f.id==='fa'){const nm=(d.aname||'').trim().replace(/\s+/g,' '),ag=parseInt(d.aage,10),sp=(d.asport||'').trim();
+if(!/^[\p{L}][\p{L} .'-]{2,59}$/u.test(nm))er.aname='Escribe el nombre completo (solo letras, mínimo 3 caracteres).';
+if(!/^\d{1,2}$/.test((d.aage||'').trim())||ag<4||ag>17)er.aage='Escribe una edad entre 4 y 17 años.';
+if(sp.length<3||sp.length>40)er.asport='Escribe el deporte (por ejemplo, Fútbol).';
+if(!er.aname&&db.athletes.some(x=>x.g==='g1'&&x.name.toLowerCase()===nm.toLowerCase()))er.aname='Ese deportista ya está en tu lista.';
+if(showErr(f,er))return;const at={id:'a'+Date.now(),name:nm,age:ag,sport:sp,g:'g1',own:true};db.athletes.push(at);save();S.sel.add=false;if(S.role==='ac')S.sel.cons=at.id;else S.sel.reg=at.id;
+const sent=emit('deportista_registrado',at,ZAPIER.evaluador,'Deportista registrado: '+at.name,`Se registró a ${at.name} (${at.age} años, ${at.sport}). Falta el consentimiento del acudiente para poder evaluarlo.`,{alerta:'NO',estado:'Sin consentimiento'});
+render();toast(S.role==='ac'?'Deportista agregado. Firma su consentimiento para habilitarlo.':'Deportista agregado. El acudiente debe firmar el consentimiento.'+(sent?' Aviso enviado.':''))}
+else if(f.id==='fe'){const n=x=>parseFloat(String(d[x]||'').replace(',','.'));
+if(!/^\d{4}-\d{2}-\d{2}$/.test(d.date)||isNaN(new Date(d.date))||d.date>TODAY)er.date='Usa el formato AAAA-MM-DD y una fecha que no sea futura.';
+[{k:'h',l:'La estatura',a:100,b:220,u:'cm'},{k:'w',l:'El peso',a:20,b:150,u:'kg'},...M.map(m=>({...m,l:'El valor'}))].forEach(m=>{const v=n(m.k);if(isNaN(v)||v<m.a||v>m.b)er[m.k]=`${m.l} debe ser un número entre ${m.a} y ${m.b} ${m.u}.`});
+if(!cons(d.aid))er.date='Este deportista no tiene consentimiento vigente.';
+if(showErr(f,er))return;const ev={id:'e'+Date.now(),athleteId:d.aid,date:d.date,h:n('h'),w:n('w'),jump:n('jump'),sprint:n('sprint'),endur:n('endur'),flex:n('flex'),notes:(d.notes||'').trim(),by:'Carlos Méndez',pub:false};
+const pv=evs(d.aid).filter(x=>x.date<ev.date).pop(),al=stag(ev,pv),at=ath(d.aid),imc=Math.round(ev.w/Math.pow(ev.h/100,2)*10)/10;db.evals.push(ev);save();
+const sent=emit('evaluacion_registrada',at,ZAPIER.evaluador,(al.length?'ALERTA de estancamiento: ':'Evaluación registrada: ')+at.name,`Evaluación de ${at.name} registrada el ${fd(ev.date)} por ${ev.by}. IMC: ${String(imc).replace('.',',')}.\n`+(al.length?`ALERTA DE ESTANCAMIENTO (mejora menor al 1 % frente a la evaluación anterior): ${al.join(', ')}.\nConsidera ajustar las cargas de entrenamiento.`:'Sin alertas de estancamiento.')+`\nQuedó sin publicar; publícala en Reportes para que el acudiente la vea.`,{alerta:al.length?'SI':'NO',estado:'Borrador'});
+render();toast('Evaluación guardada. Publícala en Reportes para que el acudiente la vea.'+(sent?(al.length?' Alerta de estancamiento enviada.':' Aviso enviado.'):''))}});
+$('#zs').textContent=ZAPIER.url?' Automatización Zapier: activa.':' Automatización Zapier: sin configurar.';render();
+</script>
+</body>
+</html>
